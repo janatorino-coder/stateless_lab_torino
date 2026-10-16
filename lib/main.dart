@@ -107,7 +107,20 @@ class DirectoryScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         children: [
           const SectionHeader(title: 'Students'),
-          const SizedBox(height: 12),
+
+          // Customization: Display the total number of students.
+          Padding(
+            padding: const EdgeInsets.only(bottom: 16),
+            child: Text(
+              'Showing ${students.length} students',
+              style: TextStyle(
+                fontSize: 14,
+                color: Colors.grey.shade600,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ),
+
           ...students.map(
             (student) => StudentCard(student: student),
           ),
