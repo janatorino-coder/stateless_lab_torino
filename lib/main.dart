@@ -65,6 +65,22 @@ class DirectoryApp extends StatelessWidget {
       theme: ThemeData(
         colorSchemeSeed: const Color.fromARGB(255, 136, 25, 158), // Customization 7: blue theme.
         useMaterial3: true,
+
+        // Customization: Apply consistent styling to all cards.
+        cardTheme: CardThemeData(
+          elevation: 3,
+          margin: const EdgeInsets.only(bottom: 12),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
+        ),
+
+        // Customization: Set a consistent AppBar appearance.
+        appBarTheme: const AppBarTheme(
+          centerTitle: true,
+          backgroundColor: Color(0xFF1565C0),
+          foregroundColor: Colors.white,
+        ),
       ),
       home: const DirectoryScreen(),
     );
